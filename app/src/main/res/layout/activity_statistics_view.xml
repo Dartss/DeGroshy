@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="4"
+    android:background="#ff96cdff">
+    <TextView
+        android:id="@+id/txt_statistics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_statistics"
+        android:layout_gravity="top"
+        android:gravity="center_horizontal">
+    </TextView>
+    <RelativeLayout
+        android:id="@+id/fragment_diagram"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:layout="@layout/layout_drawing_fragment">
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+
+        <Button
+            android:id="@+id/btn_pick_date_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_pick_date_from"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/btn_pick_date_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_pick_date_to"
+            android:onClick="onClick"/>
+    </LinearLayout>
+</LinearLayout>

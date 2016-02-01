@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/llMain"
+    android:weightSum="5"
+    tools:context=".MainActivity"
+    android:background="#ffffba66">
+
+    <TextView
+        android:text="@string/txt_spent_on_what"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/listOfSpents"
+        android:backgroundTint="#ff95ff3f"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="4"
+        android:weightSum="4"
+        >
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/btn_add_spent"
+            android:id="@+id/btn_add_spents"
+            android:onClick="onClick"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/btn_delete_spent"
+            android:id="@+id/btn_delete_spent"
+            android:onClick="onClick"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/btn_statistics_view"
+            android:id="@+id/btn_statistics_view"
+            android:onClick="onClick"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/btn_eraseDB"
+            android:id="@+id/btn_eraseDB"
+            android:onClick="onClick"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</LinearLayout>
