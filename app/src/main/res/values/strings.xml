@@ -17,4 +17,5 @@
     <string name="btn_dlg_pick_color">Колiр</string>
     <string name="btn_pick_date_from">преіод з:</string>
     <string name="btn_pick_date_to">період по:</string>
+    <string name="btn_dlg_date_pick">Дата</string>
 </resources>

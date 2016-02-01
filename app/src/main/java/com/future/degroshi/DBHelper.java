@@ -34,7 +34,10 @@ class DBHelper extends SQLiteOpenHelper {
         cv.put("date", date);
         long rowID = db.insert("spents", null, cv);
         Log.d("---Log---", "row inserted, ID = " + rowID);
-        Log.d("---Log---", "Named" + name);
+        Log.d("---Log---", "Named " + name);
+        Log.d("---Log---", "Sum " + sum);
+        Log.d("---Log---", "Date " + date);
+
         db.close();
     }
 

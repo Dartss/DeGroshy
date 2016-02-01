@@ -35,6 +35,7 @@ public class StatisticsViewActivity extends Activity {
     }
 
     public void onClick(View v) {
+
     }
 
     //расчитать доли трат

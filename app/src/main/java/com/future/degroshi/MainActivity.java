@@ -12,8 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
-import java.sql.Date;
+import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
@@ -28,6 +27,7 @@ public class MainActivity extends ActionBarActivity implements DlgColorPicker.On
     DialogFragment dlgAddSpent;
     DialogFragment dlgInputSum;
     DialogFragment dlgDeleteSpent;
+    DialogFragment dlgDatePick;
 
     public static Spent mNewSpent;
     public static Context context;
@@ -73,6 +73,7 @@ public class MainActivity extends ActionBarActivity implements DlgColorPicker.On
         dlgAddSpent = new DlgAddNewSpent();
         dlgInputSum = new DlgInputSum();
         dlgDeleteSpent = new DlgDeleteSpent();
+        dlgDatePick = new DlgDatePicker();
 
     }
 
@@ -142,13 +143,14 @@ public class MainActivity extends ActionBarActivity implements DlgColorPicker.On
 
     }
 
-    public void confirmSumDlg(Integer mInputSum) {
-
-        SimpleDateFormat sdf = new SimpleDateFormat("dd.FF.yy");
-        mDateOfSpent = sdf.format(new Date(System.currentTimeMillis()));
+    public void confirmSumDlg(Integer mInputSum, String date) {
+//        if (mDateOfSpent == null ) {
+//            SimpleDateFormat sdf = new SimpleDateFormat("d.MM.yyyy");
+//            mDateOfSpent = sdf.format(new Date(System.currentTimeMillis()));
+//        }
+        mDateOfSpent = date;
         mSumOfSpent = mInputSum;
         dbHelper.addToDB(mNameOfSpent, mSumOfSpent, mDateOfSpent);
-
     }
 
     public ArrayList<String> listOfNames(ArrayList<Spent> spents){
@@ -167,6 +169,11 @@ public class MainActivity extends ActionBarActivity implements DlgColorPicker.On
         mSpents.remove(mSpents.get(mIndexOfChangedSpent));
         mSpents.add(mNewSpent);
         updListView();
+
+    }
+
+    public void onDatePick(){
+        dlgDatePick.show(getSupportFragmentManager(), "pick the date");
 
     }
 
